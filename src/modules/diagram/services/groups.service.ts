@@ -22,7 +22,8 @@ export class GroupService {
     getGroup(id: string): Group {
         const group = this.groups.find(group => group.id === id);
         if (!group) {
-            throw new Error(`Group with ID ${id} not found`);
+            console.error(`Group with ID ${id} not found`);
+            return null;
         }
         return group;
     }
