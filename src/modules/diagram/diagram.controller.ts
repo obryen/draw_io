@@ -27,7 +27,7 @@ export class DiagramController {
 
 
   @Delete('shapes/:id')
-  deleteShape(@Param('id') id: string): void {
+  deleteShape(@Param('id') id: string): boolean {
     return this.shapeService.deleteShape(id);
   }
 
@@ -77,18 +77,13 @@ export class DiagramController {
   }
 
   @Put('move')
-  moveShapes(@Body() { shapeIds, dx, dy }): void {
+  moveShapes(@Body() { shapeIds, dx, dy }): boolean {
     return this.shapeService.moveShapes(shapeIds, dx, dy);
   }
 
   @Put('resize')
   resizeShapes(@Body() { shapeIds, dw, dh }): void {
     return this.shapeService.resizeShapes(shapeIds, dw, dh);
-  }
-
-  @Delete('shapes')
-  deleteShapes(@Body() { shapeIds }): void {
-    return this.shapeService.deleteShapes(shapeIds);
   }
 
   @Put('groups/:id/add')
