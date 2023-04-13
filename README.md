@@ -43,6 +43,13 @@ $ npm run start
 $ npm run start:dev
 
 ## Support
+```
+
+## What to improve
+
+- I have documentated the shape service alone but given more time I would apply this too all the other services
+- Use of a more complex data structure when working with linear operations , chose O(n) for simplicity sake
+- Use data store to persist values rather thatn in memory (would have some speed implications)
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
