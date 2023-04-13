@@ -1,0 +1,43 @@
+{
+  "name": "xrp-zar-oms",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"200\" alt=\"Nest Logo\" /></a> </p>",
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.3.9",
+    "@nestjs/core": "^9.3.9",
+    "ioredis": "^5.3.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "build": "nest build",
+    "start:dev": "node build/main.js",
+    "start": "npm run build && npm run start:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obryen/xrp_zar_order_ms.git"
+  },
+  "author": "Bryan Toromo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obryen/xrp_zar_order_ms/issues"
+  },
+  "homepage": "https://github.com/obryen/xrp_zar_order_ms#readme",
+  "devDependencies": {
+    "@nestjs/platform-express": "^9.3.9",
+    "@nestjs/testing": "^9.4.0",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.3",
+    "decimal.js": "^10.4.3",
+    "jest": "^29.5.0",
+    "redis": "^4.6.5",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1"
+  }
+}
