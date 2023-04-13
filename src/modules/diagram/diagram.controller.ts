@@ -67,7 +67,7 @@ export class DiagramController {
   }
 
   @Delete('groups/:id')
-  deleteGroup(@Param('id') id: string): void {
+  deleteGroup(@Param('id') id: string): boolean {
     return this.groupService.deleteGroup(id);
   }
 

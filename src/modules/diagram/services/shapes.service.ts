@@ -44,10 +44,9 @@ export class ShapeService {
    * @param stopX The X coordinate of the bottom-right corner of the rectangle.
    * @param stopY The Y coordinate of the bottom-right corner of the rectangle.
    * @returns An array of all shapes that are contained within the rectangle.
+   * @complexiy   of this method is O(n), where n is the number of shapes in the shapes array. 
    */
   selectShapes(startX: number, startY: number, stopX: number, stopY: number): Shape[] {
-    //  method is O(n), where n is the number of shapes in the shapes array. 
-    // This is because the method iterates over each shape in the array and performs a constant number of operations for each shape, such as accessing its x, y, width, and height properties.
     return this.shapes.filter(shape => {
       const shapeX = shape.x;
       const shapeY = shape.y;
@@ -63,14 +62,12 @@ export class ShapeService {
    * @param dx The amount to move each shape along the X axis.
    * @param dy The amount to move each shape along the Y axis.
    * @returns True if all shapes were moved successfully, false if any shape is not found.
+   * @complexity of the method is O(m * n), where m is the number of shape IDs in the shapeIds array.
+   * and n is the number of shapes in the shapes array.
+   * @pros - no library dependencies, simple and easy to understand
+   * @cons - Time complexity (Big O) is O(m * n), which can be slow for large numbers of shapes or shape IDs
    */
   moveShapes(shapeIds: string[], dx: number, dy: number): boolean {
-    // method is O(m * n), where m is the number of shape IDs in the shapeIds array 
-    // and n is the number of shapes in the shapes array. 
-    /**
-     * (Pros) - no library dependencies, simple and easy to understand
-     * (Cons) - Time complexity (Big O) is O(m * n), which can be slow for large numbers of shapes or shape IDs
-     */
     let success = true;
     shapeIds.forEach(id => {
       const shape = this.getShape(id);
@@ -84,6 +81,18 @@ export class ShapeService {
     return success;
   }
 
+  /**
+ * Resizes the shapes with the specified IDs by the specified amount.
+ * @param shapeIds - An array of shape IDs to resize.
+ * @param dw - The amount to change the width of each shape.
+ * @param dh - The amount to change the height of each shape.
+ * @throws An error if any of the shape IDs are not found.
+ * @returns void
+ * @complexity O(m * n), where m is the number of shape IDs in the `shapeIds` array 
+ * and n is the number of shapes in the `shapes` array.
+ * @pros - no library dependencies, simple and easy to understand
+ * @cons - Time complexity (Big O) is O(m * n), which can be slow for when resizing large numbers of shapes or shape IDs
+ */
   resizeShapes(shapeIds: string[], dw: number, dh: number): void {
     // method is O(m * n), where m is the number of shape IDs in the shapeIds 
     // array and n is the number of shapes in the shapes array. 

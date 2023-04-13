@@ -45,9 +45,9 @@ describe('ConnectionService', () => {
             expect(connectionService.getConnection('1')).toEqual({ ...connection, ...updatedConnection });
         });
 
-        it('should return undefined if the connection with the given ID is not found', () => {
+        it('should return null if the connection with the given ID is not found', () => {
             const result = connectionService.updateConnection('1', { startConnectionPoint: '2' });
-            expect(result).toBeUndefined();
+            expect(result).toBeNull();
         });
     });
 

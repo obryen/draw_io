@@ -116,8 +116,6 @@ describe('ShapeService', () => {
 
         it('should move the specified shapes by the given amount', () => {
             service.moveShapes(['1', '3'], 5, 10);
-            console.log('first item', service['shapes'][0]);
-            console.log('second item', service['shapes'][2]);
             expect(service['shapes'][0]).toEqual({ id: '1', type: 'rectangle', x: 5, y: 10, width: 10, height: 10, connections: [], });
             expect(service['shapes'][2]).toEqual({ id: '3', type: 'rectangle', x: 35, y: 40, width: 10, height: 10, connections: [], });
         });

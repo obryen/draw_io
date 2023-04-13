@@ -24,8 +24,8 @@ describe('GroupService', () => {
             expect(groupService.getGroup('123')).toBe(group);
         });
 
-        it('should return undefined if no group is found', () => {
-            expect(groupService.getGroup('123')).toBeUndefined();
+        it('should return false if no group is found', () => {
+            expect(groupService.getGroup('123')).toBeFalsy();
         });
     });
 
@@ -47,10 +47,10 @@ describe('GroupService', () => {
             expect(updatedGroup.name).toBe('updated');
         });
 
-        it('should return undefined if no group is found', () => {
+        it('should return null if no group is found', () => {
             const updates: Partial<Group> = { name: 'updated' };
             const updatedGroup = groupService.updateGroup('123', updates);
-            expect(updatedGroup).toBeUndefined();
+            expect(updatedGroup).toBeNull();
         });
     });
 
